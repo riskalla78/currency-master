@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversão de Câmbio</title>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-body-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            >Currency<span class="text-primary">master</span></a
+          >
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav text-center w-100 nav-pills">
+              <div
+                class="d-flex gap-md-3 align-items-center flex-column flex-md-row ms-md-auto"
+              >
+                <li class="nav-item">
+                  <a class="nav-link" href="#" role="button">
+                    Conversor de câmbio
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" role="button"> Ferramentas </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" role="button"> Recursos </a>
+                </li>
+              </div>
+
+              <div
+                class="d-flex flex-column flex-md-row ms-md-auto gap-md-3 me-md-5"
+              >
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Log-in</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" href="#">Saiba mais</a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div class="bg-light mt-3 ms-0 vw-100 pb-5" style="min-height: 100vh">
+        <div class="container">
+          <h1 class="text-center pt-4">
+            Uma forma segura e fácil de
+            <span class="text-primary">trocar</span> seu
+            <span class="text-primary">dinheiro</span>
+          </h1>
+          <p class="text-muted fs-5 text-center mt-3">
+            Aqui você consegue conferir as taxas de câmbio de todas as moedas em
+            tempo real.
+          </p>
+          <div class="ms-5 mt-5">
+            <p class="fs-3">Selecione sua moeda base</p>
+            <div
+              class="row justify-content-md-center gap-3"
+              id="btnBaseCollection"
+            ></div>
+          </div>
+          <div class="ms-5 mt-3">
+            <p class="fs-3">Selecione sua moeda alvo</p>
+            <div
+              class="row gap-3 base justify-content-md-center"
+              id="btnTargetCollection"
+            ></div>
+          </div>
+          <div class="d-flex justify-content-end mt-5 me-5">
+            <a
+              href=""
+              role="button"
+              class="btn btn-primary rounded-pill disabled"
+              id="trackCambio"
+            >
+              Acompanhe a taxa de câmbio
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <nav
+        class="navbar navbar-expand-lg mt-5 bg-body-light gap-5 justify-content-center d-flex flex-column flex-md-row align-items-center align-items-md-start"
+      >
+        <a class="navbar-brand" href="#"
+          >Currency<span class="text-primary">master</span></a
+        >
+
+        <ul class="navbar-nav flex-column text-center text-md-start">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"
+              >Como funciona</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Funcionalidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contrate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Folha de pagamento</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Integração</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav flex-column text-center text-md-start">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Empresa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Países</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Carreiras</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav flex-column text-center text-md-start">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Soluções</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pagamentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Impostos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Empreendimentos</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav flex-column text-center text-md-start">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Recursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">API</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Guia</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="my-5 text-center text-muted">
+        <p class="fw-light">
+          © Matheus Riskalla - Todos os direitos reservados
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
