@@ -1,20 +1,31 @@
 import FetchWrapper from "./FetchWrapper.js";
+/**Classe responsável pelas funcionalidades da página results
+ * @class
+ */
 export default class Result {
   constructor() {
     this.API = new FetchWrapper("https://v6.exchangerate-api.com/");
     this.isReversed = false;
   }
-
+  /**
+   * Renderiza os moedas que serão convertidas
+   * @method
+   * @param {string} bas
+   * @param {string} targ
+   */
   displayButtonsResult(bas, targ) {
     const coinDisplay = document.querySelector("#coinDisplay");
+    //obtém os parâmetros que foram enviados pela URL(códigos das moedas) e os armazena em variáveis
     const url = new URL(document.location);
     const base = url.searchParams.get(bas);
     const target = url.searchParams.get(targ);
+    //converte os códigos de 3 letras em códigos de duas para fazer a requisição das bandeiras
     const basebicode = base.substring(0, 2).toLowerCase();
     const targetbicode = target.substring(0, 2).toLowerCase();
 
     if (base && target !== null) {
       this.API.get("v6/212126da48160a23b540cb68/codes").then((data) => {
+        //Encontra na API os dados que correspondem aos códigos das moedas.
         const baseCurrency = data.supported_codes.find(
           (currency) => currency[0] === base
         );
@@ -47,9 +58,15 @@ export default class Result {
       });
     }
   }
-
+  /**
+   * Apresenta os resultados quando o usuário digita no input
+   * @method
+   * @param {*} bas
+   * @param {*} targ
+   */
   handleKeyup(bas, targ) {
     const amountInput = document.querySelector("#amount");
+    //Obtém na URL os dados enviados
     const url = new URL(document.location);
     const base = url.searchParams.get(bas);
     const target = url.searchParams.get(targ);
@@ -106,7 +123,12 @@ export default class Result {
         resp3.textContent = "";
       });
   }
-
+  /**
+   * Converte a data usada na resposta para que tenha um formato mais amigável
+   * @method
+   * @param {Date} dataOriginal
+   * @returns
+   */
   #converterData(dataOriginal) {
     const data = new Date(dataOriginal);
 

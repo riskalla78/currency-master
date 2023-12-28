@@ -1,10 +1,20 @@
 import Coin from "./Coin.js";
 
+/**
+ * Classe que personaliza a classe Coin para funcionalidades exclusivas
+ * @class
+ */
 export default class BaseCoin extends Coin {
   constructor() {
     super("btnBaseCollection", ".base", "base");
     this.selectedCoin = null;
   }
+  /**
+   * Usando expresão regular, cria a primeira parte do link que leva à pagina results
+   * e contém os parâmetros necessários para a conversão.
+   * @method
+   * @param {string} anchor
+   */
   createBaseLink(anchor) {
     this.selectedBaseButton = document.querySelector(
       `${this.buttonSelector}.border-primary`
@@ -16,6 +26,7 @@ export default class BaseCoin extends Coin {
       console.log(data_base);
       console.log(this.selectedBaseButton);
 
+      //Recebe o href do botão anchor e o altera
       const currentHref = anchor.getAttribute("href");
       const targetQueryPara = currentHref.match(/&target=([^&]*)/);
       const targetValue = targetQueryPara ? targetQueryPara[1] : "";
@@ -32,6 +43,10 @@ export default class BaseCoin extends Coin {
     }
   }
 
+  /**
+   * Desabilita a seleção do botão da coleção target que for igual ao selecionado na base
+   * @method
+   */
   disableSameCoinButton() {
     const targetButtons = document.querySelectorAll(".target");
 

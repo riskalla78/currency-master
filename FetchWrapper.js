@@ -1,3 +1,6 @@
+/**
+ * Encapsula os métodos de requisição feitos para as API
+ */
 export default class FetchWrapper {
   constructor(baseURL) {
     this.baseURL = baseURL;
