@@ -17,3 +17,9 @@
 * ExchangeRate-API
 * Flag CDN
 
+## Demonstração:
+
+
+
+https://github.com/riskalla78/currency-master/assets/129243396/b66cc56e-60ba-411d-a993-314ac9ab12ec
+
